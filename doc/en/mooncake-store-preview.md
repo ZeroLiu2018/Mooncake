@@ -592,6 +592,20 @@ retcode = store.setup(
 
 No error messages indicate successful data transfer.
 
+### Benchmarking with `mooncake_benchmark.py`
+
+Mooncake also includes a lightweight benchmarking script inspired by
+`redis-benchmark`. After the cluster is up and running you can invoke it
+to measure simple PUT/GET performance:
+
+```bash
+python3 benchmarks/store-benchmark/mooncake_benchmark.py -n 10000 -c 32 --operation put
+```
+
+The script supports options to specify the number of requests (`-n`), the
+number of concurrent clients (`-c`) and the operation type (`put`, `get` or
+`mixed`).
+
 ## Example Code
 
 #### Python Usage Example
